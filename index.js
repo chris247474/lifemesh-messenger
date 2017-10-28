@@ -98,7 +98,7 @@ function callSendAPI(sender_psid, response) {
 	  "message": response
 	}
 
-	sendPostReq(request_body)
+	sendPostReq(request_body, sender_psid)
   }
 
 function setGetStartedPostback(getStartedPayloadText){
@@ -110,7 +110,7 @@ function setGetStartedPostback(getStartedPayloadText){
 	sendPostReq(request_body)
 }
 
-function sendPostReq(request_body){
+function sendPostReq(request_body, sender_psid){
 	// Send the HTTP request to the Messenger Platform
 	request({
 		"uri": "https://graph.facebook.com/v2.6/me/messages",
